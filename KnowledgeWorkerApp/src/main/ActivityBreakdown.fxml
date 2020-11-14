@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane id="AnchorPane" fx:id="main" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.ActivityBreakdownController">
+  <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="131.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" width="1000.0" AnchorPane.bottomAnchor="569.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="btnLogout" layoutX="878.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleLogoutButtonAction" prefHeight="30.0" prefWidth="80.0" text="Logout">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="btnSettings" layoutX="762.0" layoutY="55.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAboutUsBtn" prefHeight="30.0" prefWidth="80.0" text="About Us">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <ImageView fx:id="myImage" fitHeight="73.0" fitWidth="113.0" layoutX="20.0" layoutY="32.0">
+         <image>
+            <Image url="@../Kando%20Logo.png" />
+         </image>
+      </ImageView>
+      <HBox layoutY="129.0" prefHeight="571.0" prefWidth="982.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="129.0">
+         <children>
+            <AnchorPane maxHeight="668.0" maxWidth="390.0" minHeight="0.0" minWidth="0.0" prefHeight="668.0" prefWidth="207.0">
+               <children>
+                  <VBox maxHeight="567.0" maxWidth="390.0" prefHeight="567.0" prefWidth="266.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="btnKanban" mnemonicParsing="false" onAction="#handleKanbanButton" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: ffc875;" text="Kanban Board" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                        <TextFlow prefHeight="2.0" prefWidth="164.0" />
+                        <Button fx:id="btnDeepFocus" mnemonicParsing="false" onAction="#handleDeepFocusButton" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: ffc875;" text="Deep Focus Screen">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <TextFlow prefHeight="2.0" prefWidth="164.0" />
+                        <Button fx:id="btnActivityBreakdown" mnemonicParsing="false" onAction="#handleActivityButton" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: ed9300;" text="Activity Breakdown">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Button>
+                        <TextFlow prefHeight="2.0" prefWidth="164.0" />
+                        <Button fx:id="btnEntries" mnemonicParsing="false" onAction="#handleEntriesButton" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: ffc875;" text="Entries">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.0" prefWidth="793.0" style="-fx-background-color: ffffff;">
+               <children>
+                  <GridPane layoutX="238.0" layoutY="241.0" prefWidth="760.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="306.3333435058594" minHeight="10.0" prefHeight="260.33331298828125" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="182.0" minHeight="0.0" prefHeight="26.66668701171875" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="284.0" minHeight="10.0" prefHeight="284.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <PieChart fx:id="pieChart" title="My Life" />
+                        <BarChart fx:id="chartDailyBreak" title="Daily Breakdown" GridPane.rowIndex="2">
+                          <xAxis>
+                            <CategoryAxis fx:id="dailyCategories" label="Categories" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="dailyDuration" label="Duration" side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <BarChart fx:id="chartWeeklyBreak" title="Weekly Breakdown" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                        <LineChart fx:id="chartWeeklyTrends" title="Weekly Trends" GridPane.columnIndex="1">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </GridPane>
+               </children></AnchorPane>
+         </children>
+      </HBox>
+      <Separator layoutY="129.0" prefHeight="1.0" prefWidth="1000.0" />
+   </children>
+</AnchorPane>

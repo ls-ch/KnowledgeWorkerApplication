@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.SignUpController">
+    <children>
+        <Pane layoutY="-7.0" prefHeight="407.0" prefWidth="609.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fffffff1" height="700.0" stroke="WHITE" strokeType="INSIDE" width="1000.0" />
+                <Button fx:id="btnBack" layoutX="57.0" layoutY="73.0" mnemonicParsing="false" onAction="#handleBackButtonAction" text="Back to Login Page">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="btnSignUp" layoutX="232.0" layoutY="562.0" mnemonicParsing="false" onAction="#insertToUserTable" text="Sign Up">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <ImageView fx:id="myImage" fitHeight="108.0" fitWidth="158.0" layoutX="421.0" layoutY="52.0">
+                    <image>
+                        <Image url="@../Kando%20Logo.png" />
+                    </image>
+                </ImageView>
+                <TextField fx:id="txtUsername" layoutX="233.0" layoutY="359.0" prefHeight="37.0" prefWidth="549.0" promptText="Username">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+                <PasswordField fx:id="txtPassword" layoutX="233.0" layoutY="422.0" prefHeight="37.0" prefWidth="549.0" promptText="New password">
+               <font>
+                  <Font size="16.0" />
+               </font></PasswordField>
+                <Label layoutX="322.0" layoutY="255.0">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label fx:id="lblError" layoutX="233.0" layoutY="480.0" text="Invalid input" textFill="#dd0606">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+            <Label layoutX="233.0" layoutY="202.0" text="Sign Up" textFill="#ed8200">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <TextField fx:id="firstNameTxt" layoutX="232.0" layoutY="292.0" prefHeight="37.0" prefWidth="225.0" promptText="First Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="lastNameTxt" layoutX="557.0" layoutY="292.0" prefHeight="37.0" prefWidth="225.0" promptText="Last Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <CheckBox fx:id="chkTermsConditions" layoutX="233.0" layoutY="525.0" mnemonicParsing="false" text="I accept the Terms of Use &amp; Privacy Policy">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>

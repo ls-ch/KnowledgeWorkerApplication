@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #494949;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.DeepFocusTaskController">
+   <children>
+      <Text fx:id="lblTaskName" fill="#f4c98c" layoutX="134.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Task Name" underline="true">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Text>
+      <Button layoutX="39.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleBackButton" text="Back" />
+      <Label fx:id="lblTaskDescription" layoutX="61.0" layoutY="218.0" prefHeight="64.0" prefWidth="488.0" text="Task Description Here" textFill="#f4c98c">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Label layoutX="249.0" layoutY="30.0" text="Deep Focus" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateTime" contentDisplay="CENTER" layoutX="175.0" layoutY="79.0" text="Date - Time Clock Disp" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="musicSelector" editable="true" layoutX="152.0" layoutY="336.0" onAction="#comboChanged" prefHeight="31.0" prefWidth="159.0" promptText="None" visibleRowCount="5" />
+      <Label layoutX="60.0" layoutY="341.0" text="Mood Music:" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="135.0" text="Task:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="191.0" text="Description:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

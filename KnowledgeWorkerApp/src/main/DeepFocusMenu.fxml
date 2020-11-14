@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane id="AnchorPane" fx:id="main" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.DeepFocusMenuController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="131.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" width="1000.0" AnchorPane.bottomAnchor="569.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="btnLogout" layoutX="878.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleLogoutButtonAction" prefHeight="30.0" prefWidth="80.0" text="Logout">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="btnSettings" layoutX="762.0" layoutY="55.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAboutUsBtn" prefHeight="30.0" prefWidth="80.0" text="About Us">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <ImageView fx:id="myImage" fitHeight="73.0" fitWidth="113.0" layoutX="20.0" layoutY="32.0">
+         <image>
+            <Image url="@../Kando%20Logo.png" />
+         </image>
+      </ImageView>
+      <HBox layoutY="129.0" prefHeight="575.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="129.0">
+         <children>
+            <AnchorPane maxHeight="668.0" maxWidth="390.0" minHeight="0.0" minWidth="0.0" prefHeight="668.0" prefWidth="207.0">
+               <children>
+                  <VBox maxHeight="567.0" maxWidth="390.0" prefHeight="567.0" prefWidth="266.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="btnKanban" mnemonicParsing="false" onAction="#handleKanbanButton" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: ffc875;" text="Kanban Board" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                        <TextFlow prefHeight="2.0" prefWidth="164.0" />
+                        <Button fx:id="btnDeepFocus" mnemonicParsing="false" onAction="#handleDeepFocusButton" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: ed9300;" text="Deep Focus Screen">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </Button>
+                        <TextFlow prefHeight="2.0" prefWidth="164.0" />
+                        <Button fx:id="btnActivityBreakdown" mnemonicParsing="false" onAction="#handleActivityButton" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: ffc875;" text="Activity Breakdown">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <TextFlow prefHeight="2.0" prefWidth="164.0" />
+                        <Button fx:id="btnEntries" layoutX="10.0" layoutY="134.0" mnemonicParsing="false" onAction="#handleEntriesButton" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: ffc875;" text="Entries">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <TextFlow prefHeight="2.0" prefWidth="164.0" />
+                        <TextFlow prefHeight="2.0" prefWidth="164.0" />
+                        <TextFlow prefHeight="2.0" prefWidth="164.0" />
+                        <TextFlow prefHeight="11.0" prefWidth="164.0" />
+                        <Pane prefHeight="300.0" prefWidth="207.0">
+                           <children>
+                              <Label fx:id="lblUnselectedError" layoutX="16.0" layoutY="226.0" prefHeight="60.0" prefWidth="175.0" text="Please first select a task to focus on" wrapText="true">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.0" prefWidth="793.0" style="-fx-background-color: ffffff;">
+               <children>
+                  <TableView fx:id="deepFocusTable" layoutX="29.0" layoutY="26.0" prefHeight="483.0" prefWidth="735.0">
+                    <columns>
+                      <TableColumn fx:id="priorityColumn" prefWidth="91.0" text="Priority" />
+                      <TableColumn fx:id="taskNameColumn" prefWidth="329.33331298828125" text="Task Name" />
+                        <TableColumn fx:id="doDateColumn" prefWidth="162.3333740234375" text="Do Date" />
+                        <TableColumn fx:id="dueDateColumn" minWidth="0.0" prefWidth="153.6666259765625" text="Due Date" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="viewTaskBtn" layoutX="343.0" layoutY="527.0" mnemonicParsing="false" onAction="#handleViewButton" text="Focus on Task">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Button>
+               </children></AnchorPane>
+         </children>
+      </HBox>
+      <Separator layoutY="129.0" prefHeight="1.0" prefWidth="1000.0" />
+   </children>
+</AnchorPane>

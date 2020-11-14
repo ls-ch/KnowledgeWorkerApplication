@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.EntriesController">
+  <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="131.0" layoutY="-1.0" stroke="WHITE" strokeType="INSIDE" width="1000.0" AnchorPane.bottomAnchor="569.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="btnLogout" layoutX="878.0" layoutY="55.0" mnemonicParsing="false" onAction="#handleLogoutButtonAction" onMouseClicked="#handleLogoutButtonAction" prefHeight="30.0" prefWidth="80.0" text="Logout">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="btnSettings" layoutX="762.0" layoutY="55.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAboutUsBtn" prefHeight="30.0" prefWidth="80.0" text="About Us">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <ImageView fx:id="myImage" fitHeight="73.0" fitWidth="113.0" layoutX="20.0" layoutY="32.0">
+         <image>
+            <Image url="@../Kando%20Logo.png" />
+         </image>
+      </ImageView>
+      <HBox layoutY="129.0" prefHeight="575.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="129.0">
+         <children>
+            <AnchorPane maxHeight="668.0" maxWidth="390.0" minHeight="0.0" minWidth="0.0" prefHeight="668.0" prefWidth="207.0">
+               <children>
+                  <VBox maxHeight="567.0" maxWidth="390.0" prefHeight="567.0" prefWidth="266.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="btnKanban" mnemonicParsing="false" onAction="#handleKanbanButton" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: ffc875;" text="Kanban Board" VBox.vgrow="ALWAYS">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                        <TextFlow prefHeight="2.0" prefWidth="164.0" />
+                        <Button fx:id="btnDeepFocus" mnemonicParsing="false" onAction="#handleDeepFocusButton" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: ffc875;" text="Deep Focus Screen">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <TextFlow prefHeight="2.0" prefWidth="164.0" />
+                        <Button fx:id="btnActivityBreakdown" mnemonicParsing="false" onAction="#handleActivityButton" prefHeight="60.0" prefWidth="300.0" style="-fx-background-color: ffc875;" text="Activity Breakdown">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <TextFlow prefHeight="2.0" prefWidth="164.0" />
+                        <TextFlow prefHeight="2.0" prefWidth="164.0">
+                           <children>
+                              <Button fx:id="btnEntries" mnemonicParsing="false" prefHeight="60.0" prefWidth="207.0" style="-fx-background-color: ed9300;" text="Entries">
+                                 <font>
+                                    <Font name="System Bold Italic" size="16.0" />
+                                 </font>
+                              </Button>
+                           </children></TextFlow>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.0" prefWidth="793.0" style="-fx-background-color: ffffff;">
+               <children>
+                  <TableView fx:id="EntryTable" layoutX="29.0" layoutY="14.0" prefHeight="492.0" prefWidth="735.0">
+                    <columns>
+                      <TableColumn fx:id="idColumn" prefWidth="43.0" resizable="false" text="ID" />
+                      <TableColumn fx:id="descriptionColumn" prefWidth="176.3333740234375" resizable="false" text="Description" />
+                        <TableColumn fx:id="categoryColumn" prefWidth="136.66668701171875" resizable="false" text="Category" />
+                        <TableColumn fx:id="startTimeColumn" prefWidth="124.0" text="Start Time" />
+                        <TableColumn fx:id="endTimeColumn" prefWidth="123.0" text="End Time" />
+                        <TableColumn fx:id="durationColumn" prefWidth="135.0" text="Duration (hrs:mins)" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="addEntriesBtn" layoutX="605.0" layoutY="526.0" mnemonicParsing="false" onAction="#handleAddEntryButton" prefHeight="30.0" prefWidth="130.0" text="Add Entry" textFill="#ed9300">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="deleteEntrybtn" layoutX="29.0" layoutY="526.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="30.0" prefWidth="130.0" text="Delete Entry" textFill="#ed9300">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+         </children>
+      </HBox>
+      <Separator layoutY="129.0" prefHeight="1.0" prefWidth="1000.0" />
+   </children>  
+</AnchorPane>
